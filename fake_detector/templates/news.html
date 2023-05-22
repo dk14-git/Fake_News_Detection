@@ -1,0 +1,37 @@
+{% extends 'base.html' %} {% load static %} {% block links %}
+<link rel="stylesheet" href="{% static 'button.css' %}" />
+<link rel="stylesheet" href="{% static 'dataset.css' %}" />
+{% endblock %} {% block main %}
+
+<div class="container">
+  <div class="row">
+    <div class="col-3">
+      <form action="{% url 'news' %}">
+        <div class="wrap">
+          <input type="hidden" name="option" value="real" />
+          <button type="submit" class="button mt-5">Real</button>
+        </div>
+      </form>
+      <form action="{% url 'news' %}">
+        <div class="wrap">
+          <input type="hidden" name="option" value="fake" />
+          <button type="submit" class="button mt-5">Fake</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="col-9">
+      {% if display %}
+      <div class="content mt-5">{{ first }}</div>
+      {% endif %}
+      {% if show %}
+      <div class="content mt-3">{{ second }}</div>
+      {% endif %}
+      {% if show %}
+      <div class="content mt-3">{{ third }}</div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block links %}
+<link rel="stylesheet" href="{% static 'detector.css' %}">
+{% endblock %}
+{% block main %}
+
+<div class="container frm-container">
+    <h1>Detector</h1>
+    <form action="{% url 'result' %}" method="POST">
+      {% csrf_token %}
+      <div class="form-group">
+        <label for="headline">News Headline:</label>
+        <input
+          type="text"
+          class="form-control mt-2"
+          id="headline"
+          name="headline"
+          placeholder="Enter the news headline"
+          required
+        />
+      </div>
+      <div class="form-group mt-3">
+        <label for="content">News Content:</label>
+        <textarea
+          class="form-contro mt-2"
+          id="content"
+          name="content"
+          placeholder="Enter the news content"
+          rows="5"
+          required
+        ></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary mt-3 fk-btn">Detect Fake News</button>
+    </form>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends 'base.html' %} {% load static %} {% block links %}
+<link rel="stylesheet" href="{% static 'dataset.css' %}" />
+<link rel="stylesheet" href="{% static 'developer.css' %}" />
+{% endblock %} {% block main %}
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-4">
+      <img src="{% static 'me.jpg' %} " class="rnd" width="90%" />
+    </div>
+    <div class="col-8">
+      <div class="content">
+        <strong>
+          Name : Dhanush Krishna R<br />
+          Roll no : AM.EN.U4AIE20021<br /><br />
+        </strong>
+
+        As a passionate computer science student, I thrive on innovation and
+        solving complex problems. With strong programming skills in Java,
+        Python, and C++, along with experience in web development and database
+        management, I am seeking an opportunity to launch my career with a
+        technology-driven firm. I bring creativity, excellent communication, and
+        a collaborative mindset to contribute to your team's success.
+        <div class="socials">
+          <a href="https://www.linkedin.com/in/dkr14/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="https://github.com/dk14-git" target="_blank"><i class="fa-brands fa-github"></i></a>
+          <a href="mailto:dhanushkrishnaofficial@gmail.com" target="_blank"><i class="fa-solid fa-envelope"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
